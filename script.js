@@ -20,13 +20,14 @@ function favMovie(e) {
     }
 }
 
-// this function is used to redirect to movie details page
+// this function is used to show details of the movie and redirect to movie details page
 function movieDetails(event) {
     let results = JSON.parse(localStorage.getItem("results")) || [];
     let current_movie = results[Number(event.target.id)];
     localStorage.setItem("current_movie", JSON.stringify(current_movie));
     window.location.assign("movie.html");
 }
+
 // this will fetch the api of words typed by the user whenever it enters the words in input tag
 search.addEventListener("input", (e) => {
     const fetchApi = async function () {
